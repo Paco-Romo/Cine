@@ -13,13 +13,12 @@ namespace Cine
 {
     public partial class Peliculas : Form
     {
-        private bool Editar = false;
-        private String conexion = "";
-        private SqlConnection sqlConnection = null;
+        //rivate bool Editar = false;
         public Peliculas()
         {
             InitializeComponent();
-            ObtenerConexion();
+            CargarPeliculas();
+
         }
 
 
@@ -27,11 +26,26 @@ namespace Cine
         {
             try
             {
+                MessageBox.Show("Conexion Exitosa");
                 string connectionString = ConfigurationManager.ConnectionStrings["CineDB"].ConnectionString;
                 return new SqlConnection(connectionString);
             }
-            catch (Exception ex) { 
-            Console.WriteLine("Error");
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+       public void CargarPeliculas()
+        {
+            using (SqlConnection cargar = ObtenerConexion())
+            { 
+                cargar.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter ("SELECT * FROM Pelicula", cargar);
+                DataTable peliculas = new DataTable();
+                adapter.Fill(peliculas);
+                MessageBox.Show($"Filas cargadas: {peliculas.Rows.Count}");
+                dgvPeliculas.DataSource = peliculas;
+
             }
         }
     }
