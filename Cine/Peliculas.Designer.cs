@@ -58,7 +58,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { nuevoButton, eliminarButton, editarButton, guardarButton, cancelarButton, datosButton, salirButton });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 27);
+            toolStrip1.Size = new Size(700, 25);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStripPeliculas";
             // 
@@ -68,8 +68,9 @@
             nuevoButton.Image = (Image)resources.GetObject("nuevoButton.Image");
             nuevoButton.ImageTransparentColor = Color.Magenta;
             nuevoButton.Name = "nuevoButton";
-            nuevoButton.Size = new Size(56, 24);
+            nuevoButton.Size = new Size(46, 22);
             nuevoButton.Text = "Nuevo";
+            nuevoButton.Click += nuevoButton_Click;
             // 
             // eliminarButton
             // 
@@ -77,7 +78,7 @@
             eliminarButton.Image = (Image)resources.GetObject("eliminarButton.Image");
             eliminarButton.ImageTransparentColor = Color.Magenta;
             eliminarButton.Name = "eliminarButton";
-            eliminarButton.Size = new Size(67, 24);
+            eliminarButton.Size = new Size(54, 22);
             eliminarButton.Text = "Eliminar";
             // 
             // editarButton
@@ -86,7 +87,7 @@
             editarButton.Image = (Image)resources.GetObject("editarButton.Image");
             editarButton.ImageTransparentColor = Color.Magenta;
             editarButton.Name = "editarButton";
-            editarButton.Size = new Size(52, 24);
+            editarButton.Size = new Size(41, 22);
             editarButton.Text = "Editar";
             // 
             // guardarButton
@@ -95,7 +96,7 @@
             guardarButton.Image = (Image)resources.GetObject("guardarButton.Image");
             guardarButton.ImageTransparentColor = Color.Magenta;
             guardarButton.Name = "guardarButton";
-            guardarButton.Size = new Size(66, 24);
+            guardarButton.Size = new Size(53, 22);
             guardarButton.Text = "Guardar";
             // 
             // cancelarButton
@@ -104,7 +105,7 @@
             cancelarButton.Image = (Image)resources.GetObject("cancelarButton.Image");
             cancelarButton.ImageTransparentColor = Color.Magenta;
             cancelarButton.Name = "cancelarButton";
-            cancelarButton.Size = new Size(70, 24);
+            cancelarButton.Size = new Size(57, 22);
             cancelarButton.Text = "Cancelar";
             // 
             // datosButton
@@ -113,7 +114,7 @@
             datosButton.Image = (Image)resources.GetObject("datosButton.Image");
             datosButton.ImageTransparentColor = Color.Magenta;
             datosButton.Name = "datosButton";
-            datosButton.Size = new Size(110, 24);
+            datosButton.Size = new Size(87, 22);
             datosButton.Text = "Obtener Datos";
             // 
             // salirButton
@@ -123,7 +124,7 @@
             salirButton.Image = (Image)resources.GetObject("salirButton.Image");
             salirButton.ImageTransparentColor = Color.Magenta;
             salirButton.Name = "salirButton";
-            salirButton.Size = new Size(42, 24);
+            salirButton.Size = new Size(33, 22);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
             // 
@@ -132,100 +133,106 @@
             dgvPeliculas.AllowUserToAddRows = false;
             dgvPeliculas.AllowUserToDeleteRows = false;
             dgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPeliculas.Location = new Point(12, 39);
+            dgvPeliculas.Location = new Point(10, 29);
+            dgvPeliculas.Margin = new Padding(3, 2, 3, 2);
             dgvPeliculas.Name = "dgvPeliculas";
             dgvPeliculas.ReadOnly = true;
             dgvPeliculas.RowHeadersWidth = 51;
-            dgvPeliculas.Size = new Size(776, 255);
+            dgvPeliculas.Size = new Size(679, 191);
             dgvPeliculas.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 313);
+            label1.Location = new Point(18, 235);
             label1.Name = "label1";
-            label1.Size = new Size(74, 20);
+            label1.Size = new Size(59, 15);
             label1.TabIndex = 2;
             label1.Text = "IDPelicula";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(21, 391);
+            label2.Location = new Point(18, 293);
             label2.Name = "label2";
-            label2.Size = new Size(64, 20);
+            label2.Size = new Size(51, 15);
             label2.TabIndex = 3;
             label2.Text = "Nombre";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(274, 313);
+            label3.Location = new Point(240, 235);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(55, 15);
             label3.TabIndex = 4;
             label3.Text = "Duracion";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(274, 395);
+            label4.Location = new Point(240, 296);
             label4.Name = "label4";
-            label4.Size = new Size(72, 20);
+            label4.Size = new Size(56, 15);
             label4.TabIndex = 5;
             label4.Text = "IDGenero";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(525, 354);
+            label5.Location = new Point(459, 266);
             label5.Name = "label5";
-            label5.Size = new Size(105, 20);
+            label5.Size = new Size(84, 15);
             label5.TabIndex = 6;
             label5.Text = "idClasificacion";
             // 
             // idBox
             // 
             idBox.Enabled = false;
-            idBox.Location = new Point(101, 310);
+            idBox.Location = new Point(88, 232);
+            idBox.Margin = new Padding(3, 2, 3, 2);
             idBox.Name = "idBox";
-            idBox.Size = new Size(155, 27);
+            idBox.Size = new Size(136, 23);
             idBox.TabIndex = 7;
             // 
             // nombreBox
             // 
-            nombreBox.Location = new Point(101, 388);
+            nombreBox.Location = new Point(88, 291);
+            nombreBox.Margin = new Padding(3, 2, 3, 2);
             nombreBox.Name = "nombreBox";
-            nombreBox.Size = new Size(155, 27);
+            nombreBox.Size = new Size(136, 23);
             nombreBox.TabIndex = 8;
             // 
             // duracionBox
             // 
-            duracionBox.Location = new Point(349, 310);
+            duracionBox.Location = new Point(305, 232);
+            duracionBox.Margin = new Padding(3, 2, 3, 2);
             duracionBox.Name = "duracionBox";
-            duracionBox.Size = new Size(155, 27);
+            duracionBox.Size = new Size(136, 23);
             duracionBox.TabIndex = 9;
             // 
             // generoBox
             // 
             generoBox.Enabled = false;
-            generoBox.Location = new Point(349, 388);
+            generoBox.Location = new Point(305, 291);
+            generoBox.Margin = new Padding(3, 2, 3, 2);
             generoBox.Name = "generoBox";
-            generoBox.Size = new Size(155, 27);
+            generoBox.Size = new Size(136, 23);
             generoBox.TabIndex = 10;
             // 
             // clasificacionBox
             // 
-            clasificacionBox.Location = new Point(633, 351);
+            clasificacionBox.Location = new Point(554, 263);
+            clasificacionBox.Margin = new Padding(3, 2, 3, 2);
             clasificacionBox.Name = "clasificacionBox";
-            clasificacionBox.Size = new Size(155, 27);
+            clasificacionBox.Size = new Size(136, 23);
             clasificacionBox.TabIndex = 11;
             // 
             // Peliculas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(clasificacionBox);
             Controls.Add(generoBox);
             Controls.Add(duracionBox);
@@ -238,6 +245,7 @@
             Controls.Add(label1);
             Controls.Add(dgvPeliculas);
             Controls.Add(toolStrip1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Peliculas";
             Text = "Peliculas";
             toolStrip1.ResumeLayout(false);

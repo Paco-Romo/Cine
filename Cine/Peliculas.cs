@@ -30,23 +30,29 @@ namespace Cine
                 string connectionString = ConfigurationManager.ConnectionStrings["CineDB"].ConnectionString;
                 return new SqlConnection(connectionString);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString());
                 throw;
             }
         }
-       public void CargarPeliculas()
+        public void CargarPeliculas()
         {
             using (SqlConnection cargar = ObtenerConexion())
-            { 
+            {
                 cargar.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter ("SELECT * FROM Pelicula", cargar);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Pelicula", cargar);
                 DataTable peliculas = new DataTable();
                 adapter.Fill(peliculas);
                 MessageBox.Show($"Filas cargadas: {peliculas.Rows.Count}");
                 dgvPeliculas.DataSource = peliculas;
 
             }
+        }
+
+        private void nuevoButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

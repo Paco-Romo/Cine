@@ -24,5 +24,10 @@ namespace Cine
             Genero genero = new Genero();
             genero.ShowDialog();
         }
+
+        private void Cine_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
