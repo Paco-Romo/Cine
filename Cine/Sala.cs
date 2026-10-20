@@ -187,7 +187,6 @@ namespace Cine
 
                     if (Editar == false)
                     {
-                        // INSERT: crear una sala nueva
                         string nuevo =
                             "INSERT INTO dbo.Sala " +
                             "(IDSucursal, NumeroSala, TipoSala, CantidadAsientos) " +
@@ -219,7 +218,6 @@ namespace Cine
                     }
                     else
                     {
-                        // UPDATE: editar una sala existente
                         string actualizar =
                             "UPDATE dbo.Sala SET " +
                             "IDSucursal = @IDSucursal, " +
