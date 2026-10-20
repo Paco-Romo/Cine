@@ -46,8 +46,8 @@
             idBox = new TextBox();
             nombreBox = new TextBox();
             duracionBox = new TextBox();
-            generoBox = new TextBox();
-            clasificacionBox = new TextBox();
+            generoBox = new ComboBox();
+            clasificacionBox = new ComboBox();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
             SuspendLayout();
@@ -70,6 +70,7 @@
             nuevoButton.Name = "nuevoButton";
             nuevoButton.Size = new Size(56, 24);
             nuevoButton.Text = "Nuevo";
+            nuevoButton.Click += nuevoButton_Click;
             // 
             // eliminarButton
             // 
@@ -97,6 +98,7 @@
             guardarButton.Name = "guardarButton";
             guardarButton.Size = new Size(66, 24);
             guardarButton.Text = "Guardar";
+            guardarButton.Click += guardarButton_Click;
             // 
             // cancelarButton
             // 
@@ -115,6 +117,7 @@
             datosButton.Name = "datosButton";
             datosButton.Size = new Size(110, 24);
             datosButton.Text = "Obtener Datos";
+            datosButton.Click += datosButton_Click;
             // 
             // salirButton
             // 
@@ -126,6 +129,7 @@
             salirButton.Size = new Size(42, 24);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
+            salirButton.Click += salirButton_Click;
             // 
             // dgvPeliculas
             // 
@@ -138,6 +142,7 @@
             dgvPeliculas.RowHeadersWidth = 51;
             dgvPeliculas.Size = new Size(776, 255);
             dgvPeliculas.TabIndex = 1;
+            dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
             // 
             // label1
             // 
@@ -171,18 +176,18 @@
             label4.AutoSize = true;
             label4.Location = new Point(274, 395);
             label4.Name = "label4";
-            label4.Size = new Size(72, 20);
+            label4.Size = new Size(57, 20);
             label4.TabIndex = 5;
-            label4.Text = "IDGenero";
+            label4.Text = "Genero";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(525, 354);
             label5.Name = "label5";
-            label5.Size = new Size(105, 20);
+            label5.Size = new Size(92, 20);
             label5.TabIndex = 6;
-            label5.Text = "idClasificacion";
+            label5.Text = "Clasificacion";
             // 
             // idBox
             // 
@@ -194,6 +199,7 @@
             // 
             // nombreBox
             // 
+            nombreBox.Enabled = false;
             nombreBox.Location = new Point(101, 388);
             nombreBox.Name = "nombreBox";
             nombreBox.Size = new Size(155, 27);
@@ -201,6 +207,7 @@
             // 
             // duracionBox
             // 
+            duracionBox.Enabled = false;
             duracionBox.Location = new Point(349, 310);
             duracionBox.Name = "duracionBox";
             duracionBox.Size = new Size(155, 27);
@@ -208,18 +215,19 @@
             // 
             // generoBox
             // 
-            generoBox.Enabled = false;
-            generoBox.Location = new Point(349, 388);
+            generoBox.FormattingEnabled = true;
+            generoBox.Location = new Point(349, 391);
             generoBox.Name = "generoBox";
-            generoBox.Size = new Size(155, 27);
-            generoBox.TabIndex = 10;
+            generoBox.Size = new Size(151, 28);
+            generoBox.TabIndex = 12;
             // 
             // clasificacionBox
             // 
-            clasificacionBox.Location = new Point(633, 351);
+            clasificacionBox.FormattingEnabled = true;
+            clasificacionBox.Location = new Point(623, 351);
             clasificacionBox.Name = "clasificacionBox";
-            clasificacionBox.Size = new Size(155, 27);
-            clasificacionBox.TabIndex = 11;
+            clasificacionBox.Size = new Size(151, 28);
+            clasificacionBox.TabIndex = 13;
             // 
             // Peliculas
             // 
@@ -266,7 +274,7 @@
         private TextBox idBox;
         private TextBox nombreBox;
         private TextBox duracionBox;
-        private TextBox generoBox;
-        private TextBox clasificacionBox;
+        private ComboBox generoBox;
+        private ComboBox clasificacionBox;
     }
 }

@@ -24,5 +24,10 @@ namespace Cine
             Genero genero = new Genero();
             genero.ShowDialog();
         }
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Estado estado = new Estado();
+            estado.ShowDialog();
+        }
     }
 }
