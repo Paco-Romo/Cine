@@ -29,5 +29,11 @@ namespace Cine
         {
 
         }
+
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sala sala = new Sala();
+            sala.ShowDialog();
+        }
     }
 }
