@@ -29,5 +29,11 @@ namespace Cine
             Estado estado = new Estado();
             estado.ShowDialog();
         }
+
+        private void ciudadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ciudad ciudad = new Ciudad();
+            ciudad.ShowDialog();
+        }
     }
 }

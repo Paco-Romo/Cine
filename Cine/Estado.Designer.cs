@@ -91,6 +91,7 @@
             editarButton.Name = "editarButton";
             editarButton.Size = new Size(52, 24);
             editarButton.Text = "Editar";
+            editarButton.Click += editarButton_Click;
             // 
             // eliminarButton
             // 
@@ -100,6 +101,7 @@
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(67, 24);
             eliminarButton.Text = "Eliminar";
+            eliminarButton.Click += eliminarButton_Click;
             // 
             // guardarButton
             // 

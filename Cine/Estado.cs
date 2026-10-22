@@ -98,12 +98,14 @@ namespace Cine
                     using (SqlConnection cargar = ObtenerConexion())
                     {
                         cargar.Open();
-                        String agrega = "INSERT INTO dbo.Estado (SiglaEstado,ClaveEstado, NombreEstado)\r\n"
-                        + "VALUES ('" + siglaBox.Text + "', '" + claveBox.Text + "', '" + nombreBox.Text + "')";
+                        String agrega =
+                            "INSERT INTO dbo.Estado (SiglaEstado,ClaveEstado, NombreEstado)\r\n"
+                        + "VALUES (@SiglaEstado, @ClaveEstado, @NombreEstado)";
                         SqlCommand comando = new SqlCommand(agrega, cargar);
-                        SqlDataAdapter adapter = new SqlDataAdapter(comando);
-                        DataTable datos = new DataTable();
-                        adapter.Fill(datos);
+
+                        comando.Parameters.AddWithValue("@SiglaEstado", siglaBox.Text);
+                        comando.Parameters.AddWithValue("@ClaveEstado", claveBox.Text);
+                        comando.Parameters.AddWithValue("@NombreEstado", nombreBox.Text);
 
                         int renglonesAfectados = comando.ExecuteNonQuery();
 
@@ -116,7 +118,6 @@ namespace Cine
                         {
                             MessageBox.Show("ERROR: No se registro");
                         }
-                        cargar.Close();
                     }
                 }
                 catch (Exception ex)
@@ -145,11 +146,96 @@ namespace Cine
 
                 dgvEstado.Enabled = true;
             }
+            else
+            {
+                using (SqlConnection cargar = ObtenerConexion())
+                {
+                    cargar.Open();
+
+                    string editar =
+                        "UPDATE dbo.Estado " +
+                        "SET SiglaEstado = @SiglaEstado, ClaveEstado = @ClaveEstado, NombreEstado = @NombreEstado " +
+                        "WHERE IDEstado = @IDEstado";
+
+                    SqlCommand comando = new SqlCommand(editar, cargar);
+
+                    comando.Parameters.AddWithValue("@IDEstado", int.Parse(idBox.Text));
+                    comando.Parameters.AddWithValue("@SiglaEstado", siglaBox.Text);
+                    comando.Parameters.AddWithValue("@ClaveEstado", claveBox.Text);
+                    comando.Parameters.AddWithValue("@NombreEstado", nombreBox.Text);
+
+                    int renglonesAfectados = comando.ExecuteNonQuery();
+
+                    if (renglonesAfectados > 0)
+                    {
+                        MessageBox.Show("Éxito al editar el registro");
+                    }
+                }
+            }
+
+            CargarEstados();
         }
 
         private void obtenerButton_Click(object sender, EventArgs e)
         {
             CargarEstados();
+        }
+
+        private void eliminarButton_Click(object sender, EventArgs e)
+        {
+            if (dgvEstado.SelectedRows.Count == 1)
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "¿Desea eliminar este estado?",
+                    "Eliminar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    using (SqlConnection cargar = ObtenerConexion())
+                    {
+                        cargar.Open();
+
+                        string eliminar =
+                            "DELETE FROM dbo.Estado " +
+                            "WHERE IDEstado = @IDEstado";
+
+                        SqlCommand comando = new SqlCommand(eliminar, cargar);
+
+                        comando.Parameters.AddWithValue(
+                            "@IDEstado", idBox.Text);
+
+                        int renglonesAfectados = comando.ExecuteNonQuery();
+
+                        if (renglonesAfectados > 0)
+                        {
+                            MessageBox.Show("Éxito al eliminar el registro");
+                        }
+                    }
+
+                    CargarEstados();
+
+                }
+            }
+        }
+
+        private void editarButton_Click(object sender, EventArgs e)
+        {
+            if (dgvEstado.SelectedRows.Count == 1)
+            {
+                editar = true;
+
+                siglaBox.Enabled = true;
+                claveBox.Enabled = true;
+                nombreBox.Enabled = true;
+
+                guardarButton.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un registro para editar");
+            }
         }
     }
 }
