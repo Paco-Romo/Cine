@@ -14,6 +14,7 @@ namespace Cine
         public Genero()
         {
             InitializeComponent();
+            CargarPeliculas();
         }
 
         public void adbuttons()
@@ -36,7 +37,6 @@ namespace Cine
         {
             try
             {
-                MessageBox.Show("Conexion Exitosa");
                 string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["CineDB"].ConnectionString;
                 return new SqlConnection(connectionString);
             }
@@ -51,7 +51,7 @@ namespace Cine
             using (SqlConnection cargar = ObtenerConexion())
             {
                 cargar.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Pelicula", cargar);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Genero", cargar);
                 DataTable genero = new DataTable();
                 adapter.Fill(genero);
                 MessageBox.Show($"Filas cargadas: {genero.Rows.Count}");
@@ -66,7 +66,7 @@ namespace Cine
 
         private void datosButton_Click(object sender, EventArgs e)
         {
-
+            CargarPeliculas();
         }
 
         private void salirButton_Click(object sender, EventArgs e)
