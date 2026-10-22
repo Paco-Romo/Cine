@@ -37,7 +37,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dgvPeliculas = new DataGridView();
+            dgvGenero = new DataGridView();
             toolStrip1 = new ToolStrip();
             nuevoButton = new ToolStripButton();
             eliminarButton = new ToolStripButton();
@@ -46,7 +46,7 @@
             cancelarButton = new ToolStripButton();
             datosButton = new ToolStripButton();
             salirButton = new ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGenero).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -119,18 +119,18 @@
             label1.TabIndex = 14;
             label1.Text = "IDGenero";
             // 
-            // dgvPeliculas
+            // dgvGenero
             // 
-            dgvPeliculas.AllowUserToAddRows = false;
-            dgvPeliculas.AllowUserToDeleteRows = false;
-            dgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPeliculas.Location = new Point(10, 97);
-            dgvPeliculas.Margin = new Padding(3, 2, 3, 2);
-            dgvPeliculas.Name = "dgvPeliculas";
-            dgvPeliculas.ReadOnly = true;
-            dgvPeliculas.RowHeadersWidth = 51;
-            dgvPeliculas.Size = new Size(679, 191);
-            dgvPeliculas.TabIndex = 13;
+            dgvGenero.AllowUserToAddRows = false;
+            dgvGenero.AllowUserToDeleteRows = false;
+            dgvGenero.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGenero.Location = new Point(10, 97);
+            dgvGenero.Margin = new Padding(3, 2, 3, 2);
+            dgvGenero.Name = "dgvGenero";
+            dgvGenero.ReadOnly = true;
+            dgvGenero.RowHeadersWidth = 51;
+            dgvGenero.Size = new Size(679, 191);
+            dgvGenero.TabIndex = 13;
             // 
             // toolStrip1
             // 
@@ -170,6 +170,7 @@
             editarButton.Name = "editarButton";
             editarButton.Size = new Size(41, 22);
             editarButton.Text = "Editar";
+            editarButton.Click += editarButton_Click;
             // 
             // guardarButton
             // 
@@ -189,6 +190,7 @@
             cancelarButton.Name = "cancelarButton";
             cancelarButton.Size = new Size(57, 22);
             cancelarButton.Text = "Cancelar";
+            cancelarButton.Click += cancelarButton_Click;
             // 
             // datosButton
             // 
@@ -225,11 +227,11 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dgvPeliculas);
+            Controls.Add(dgvGenero);
             Controls.Add(toolStrip1);
             Name = "Genero";
             Text = "Genero";
-            ((System.ComponentModel.ISupportInitialize)dgvPeliculas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGenero).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);
@@ -245,7 +247,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dgvPeliculas;
+        private DataGridView dgvGenero;
         private ToolStrip toolStrip1;
         private ToolStripButton nuevoButton;
         private ToolStripButton eliminarButton;

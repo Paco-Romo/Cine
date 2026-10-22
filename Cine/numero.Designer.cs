@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(numero));
-            idBox = new TextBox();
+            numBox = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label2 = new Label();
@@ -47,14 +47,14 @@
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // idBox
+            // numBox
             // 
-            idBox.Enabled = false;
-            idBox.Location = new Point(83, 339);
-            idBox.Margin = new Padding(3, 2, 3, 2);
-            idBox.Name = "idBox";
-            idBox.Size = new Size(136, 23);
-            idBox.TabIndex = 29;
+            numBox.Enabled = false;
+            numBox.Location = new Point(83, 339);
+            numBox.Margin = new Padding(3, 2, 3, 2);
+            numBox.Name = "numBox";
+            numBox.Size = new Size(136, 23);
+            numBox.TabIndex = 29;
             // 
             // label5
             // 
@@ -88,7 +88,6 @@
             label1.Size = new Size(49, 15);
             label1.TabIndex = 24;
             label1.Text = "numero";
-            label1.Click += label1_Click;
             // 
             // dgvPeliculas
             // 
@@ -121,6 +120,7 @@
             nuevoButton.Name = "nuevoButton";
             nuevoButton.Size = new Size(46, 22);
             nuevoButton.Text = "Nuevo";
+            nuevoButton.Click += nuevoButton_Click;
             // 
             // eliminarButton
             // 
@@ -130,6 +130,7 @@
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(54, 22);
             eliminarButton.Text = "Eliminar";
+            eliminarButton.Click += eliminarButton_Click;
             // 
             // editarButton
             // 
@@ -139,6 +140,7 @@
             editarButton.Name = "editarButton";
             editarButton.Size = new Size(41, 22);
             editarButton.Text = "Editar";
+            editarButton.Click += editarButton_Click;
             // 
             // guardarButton
             // 
@@ -148,6 +150,7 @@
             guardarButton.Name = "guardarButton";
             guardarButton.Size = new Size(53, 22);
             guardarButton.Text = "Guardar";
+            guardarButton.Click += guardarButton_Click;
             // 
             // cancelarButton
             // 
@@ -157,6 +160,7 @@
             cancelarButton.Name = "cancelarButton";
             cancelarButton.Size = new Size(57, 22);
             cancelarButton.Text = "Cancelar";
+            cancelarButton.Click += cancelarButton_Click;
             // 
             // datosButton
             // 
@@ -178,13 +182,14 @@
             salirButton.Size = new Size(33, 22);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
+            salirButton.Click += salirButton_Click;
             // 
             // numero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(idBox);
+            Controls.Add(numBox);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -201,7 +206,7 @@
         }
 
         #endregion
-        private TextBox idBox;
+        private TextBox numBox;
         private Label label5;
         private Label label4;
         private Label label2;

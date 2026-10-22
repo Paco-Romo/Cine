@@ -11,25 +11,26 @@ namespace Cine
 {
     public partial class Genero : Form
     {
+        bool Editar = false;
         public Genero()
         {
             InitializeComponent();
-            CargarPeliculas();
+            CargarDatos();
         }
 
         public void adbuttons()
         {
+            Editar = false;
             nuevoButton.Enabled = true;
-            editarButton.Enabled = true;
-            datosButton.Enabled = true;
-            eliminarButton.Enabled = true;
-            guardarButton.Enabled = true;
-            cancelarButton.Enabled = true;
+            editarButton.Enabled = false;
+            eliminarButton.Enabled = false;
+            guardarButton.Enabled = false;
+            cancelarButton.Enabled = false;
         }
         public void LimpiarCampos()
         {
-            nombreBox.Clear();
             idBox.Clear();
+            nombreBox.Clear();
             descripcionBox.Clear();
         }
 
@@ -46,7 +47,7 @@ namespace Cine
                 throw;
             }
         }
-        public void CargarPeliculas()
+        public void CargarDatos()
         {
             using (SqlConnection cargar = ObtenerConexion())
             {
@@ -55,18 +56,40 @@ namespace Cine
                 DataTable genero = new DataTable();
                 adapter.Fill(genero);
                 MessageBox.Show($"Filas cargadas: {genero.Rows.Count}");
-                dgvPeliculas.DataSource = genero;
+                dgvGenero.DataSource = genero;
+            }
+        }
+
+        private void dgvGenero_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvGenero.SelectedRows.Count == 1)
+            {
+                DataGridViewRow r = dgvGenero.SelectedRows[0];
+
+                if (r.Cells["IDGenero"].Value != null)
+                {
+                    idBox.Text =
+                        r.Cells["IDGenero"].Value.ToString();
+
+                    nombreBox.Text =
+                        r.Cells["NombreGenero"].Value.ToString();
+
+                    descripcionBox.Text =
+                        r.Cells["DescripcionGenero"].Value.ToString();
+                }
             }
         }
         private void nuevoButton_Click(object sender, EventArgs e)
         {
-            nuevoButton.Enabled = false;
             LimpiarCampos();
+            nuevoButton.Enabled = false;
+            guardarButton.Enabled = true;
+            cancelarButton.Enabled = true;
         }
 
         private void datosButton_Click(object sender, EventArgs e)
         {
-            CargarPeliculas();
+            CargarDatos();
         }
 
         private void salirButton_Click(object sender, EventArgs e)
@@ -76,14 +99,13 @@ namespace Cine
 
         private void eliminarButton_Click(object sender, EventArgs e)
         {
-
             DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 using (SqlConnection conexion = ObtenerConexion())
                 {
                     conexion.Open();
-                    string query = "DELETE FROM Genero WHERE IdGenero = @IdGenero";
+                    string query = "DELETE FROM Genero WHERE Idbox = @IdGenero";
                     SqlCommand command = new SqlCommand(query, conexion);
                     command.Parameters.AddWithValue("@IdGenero", idBox.Text);
                     int rowsAffected = command.ExecuteNonQuery();
@@ -101,11 +123,6 @@ namespace Cine
             }
         }
 
-        private void guardarsButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guardarButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nombreBox.Text) || string.IsNullOrWhiteSpace(descripcionBox.Text))
@@ -113,38 +130,94 @@ namespace Cine
                 MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
                 return;
             }
-
-            string conexion = "Server=./localhost; Database=cineBD; Trusted_Connection=true;";
-            string query = "INSERT INTO Genero (Nombre, DescripcionGenero) VALUES (@nombre, @descripcion)";
-
-            using (SqlConnection connection = new SqlConnection(conexion))
+            else
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                string conexion = "Server=./localhost; Database=cineBD; Trusted_Connection=true;";
+                string query = "INSERT INTO Genero (NombreGenero, DescripcionGenero) VALUES (@nombre, @descripcion)";
+
+                try
                 {
-                    command.Parameters.AddWithValue("@nombre", nombreBox.Text);
-                    command.Parameters.AddWithValue("@descripcion", descripcionBox.Text);
-                    try
+                    using (SqlConnection s = ObtenerConexion())
                     {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        s.Open();
+
+                        if (Editar == false)
                         {
-                            MessageBox.Show("Registro guardado correctamente.");
-                            LimpiarCampos();
-                            adbuttons();
+                            string nuevo =
+                                "INSERT INTO dbo.Genero " +
+                                "(NombreGenero, DescripcionGenero) " +
+                                "VALUES (@NombreGenero, @DescripcionGenero)";
+
+                            SqlCommand comando = new SqlCommand(nuevo, s);
+
+                            comando.Parameters.AddWithValue(
+                                "@NombreGenero", nombreBox.Text.Trim());
+
+                            comando.Parameters.AddWithValue(
+                                "@DescripcionGenero", descripcionBox.Text.Trim());
+
+                            int renglonesAfectados = comando.ExecuteNonQuery();
+
+                            if (renglonesAfectados > 0)
+                            {
+                                MessageBox.Show("Éxito al guardar el registro");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo guardar el registro.");
+                            string actualizar =
+                                "UPDATE dbo.Genero SET " +
+                                "NombreGenero = @NombreGenero, " +
+                                "DescripcionGenero = @DescripcionGenero " +
+                                "WHERE IDGenero = @IDGenero";
+
+                            SqlCommand comando = new SqlCommand(actualizar, s);
+
+                            comando.Parameters.AddWithValue(
+                                "@NombreGenero", nombreBox.Text.Trim());
+
+                            comando.Parameters.AddWithValue(
+                                "@DescripcionGenero", descripcionBox.Text.Trim());
+
+                            comando.Parameters.AddWithValue(
+                                "@IDGenero", Convert.ToInt32(idBox.Text));
+
+                            int renglonesAfectados = comando.ExecuteNonQuery();
+
+                            if (renglonesAfectados > 0)
+                            {
+                                MessageBox.Show("Éxito al editar el registro");
+                            }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error al guardar el registro: {ex.Message}");
-                    }
+                    LimpiarCampos();
+                    adbuttons();
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Excepción: " + ex.Message);
+                }
+
+                LimpiarCampos();
+
             }
         }
 
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void editarButton_Click(object sender, EventArgs e)
+        {
+            Editar = true;
+
+            guardarButton.Enabled = true;
+            cancelarButton.Enabled = true;
+            nuevoButton.Enabled = false;
+            editarButton.Enabled = false;
+            eliminarButton.Enabled = false;
+            datosButton.Enabled = false;
+        }
     }
 }

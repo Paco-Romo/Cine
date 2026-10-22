@@ -55,57 +55,55 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(398, 515);
+            label4.Location = new Point(279, 309);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(109, 25);
+            label4.Size = new Size(71, 15);
             label4.TabIndex = 42;
             label4.Text = "Tipo de Sala";
             // 
             // txtNumSala
             // 
-            txtNumSala.Location = new Point(547, 432);
-            txtNumSala.Margin = new Padding(4);
+            txtNumSala.Location = new Point(383, 259);
+            txtNumSala.Margin = new Padding(3, 2, 3, 2);
             txtNumSala.Name = "txtNumSala";
-            txtNumSala.Size = new Size(193, 31);
+            txtNumSala.Size = new Size(136, 23);
             txtNumSala.TabIndex = 41;
             // 
             // txtIDSala
             // 
             txtIDSala.Enabled = false;
-            txtIDSala.Location = new Point(134, 429);
-            txtIDSala.Margin = new Padding(4);
+            txtIDSala.Location = new Point(94, 257);
+            txtIDSala.Margin = new Padding(3, 2, 3, 2);
             txtIDSala.Name = "txtIDSala";
             txtIDSala.ReadOnly = true;
-            txtIDSala.Size = new Size(193, 31);
+            txtIDSala.Size = new Size(136, 23);
             txtIDSala.TabIndex = 39;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(398, 438);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(279, 263);
             label3.Name = "label3";
-            label3.Size = new Size(137, 25);
+            label3.Size = new Size(90, 15);
             label3.TabIndex = 38;
             label3.Text = "Numero de sala";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(25, 515);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(18, 309);
             label2.Name = "label2";
-            label2.Size = new Size(95, 25);
+            label2.Size = new Size(62, 15);
             label2.TabIndex = 37;
             label2.Text = "IDSucursal";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 426);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(18, 256);
             label1.Name = "label1";
-            label1.Size = new Size(62, 25);
+            label1.Size = new Size(39, 15);
             label1.TabIndex = 36;
             label1.Text = "IDSala";
             // 
@@ -114,12 +112,12 @@
             dgvSala.AllowUserToAddRows = false;
             dgvSala.AllowUserToDeleteRows = false;
             dgvSala.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSala.Location = new Point(26, 68);
-            dgvSala.Margin = new Padding(4);
+            dgvSala.Location = new Point(18, 41);
+            dgvSala.Margin = new Padding(3, 2, 3, 2);
             dgvSala.Name = "dgvSala";
             dgvSala.ReadOnly = true;
             dgvSala.RowHeadersWidth = 51;
-            dgvSala.Size = new Size(970, 315);
+            dgvSala.Size = new Size(679, 189);
             dgvSala.TabIndex = 35;
             dgvSala.CellContentClick += dgvClasificacion_CellContentClick;
             dgvSala.SelectionChanged += dgvSala_SelectionChanged;
@@ -130,7 +128,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { nuevoButton, eliminarButton, editarButton, guardarButton, cancelarButton, datosButton, salirButton });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1088, 34);
+            toolStrip1.Size = new Size(762, 25);
             toolStrip1.TabIndex = 34;
             toolStrip1.Text = "toolStripPeliculas";
             // 
@@ -140,7 +138,7 @@
             nuevoButton.Image = (Image)resources.GetObject("nuevoButton.Image");
             nuevoButton.ImageTransparentColor = Color.Magenta;
             nuevoButton.Name = "nuevoButton";
-            nuevoButton.Size = new Size(68, 29);
+            nuevoButton.Size = new Size(46, 22);
             nuevoButton.Text = "Nuevo";
             nuevoButton.Click += nuevoButton_Click;
             // 
@@ -150,7 +148,7 @@
             eliminarButton.Image = (Image)resources.GetObject("eliminarButton.Image");
             eliminarButton.ImageTransparentColor = Color.Magenta;
             eliminarButton.Name = "eliminarButton";
-            eliminarButton.Size = new Size(78, 29);
+            eliminarButton.Size = new Size(54, 22);
             eliminarButton.Text = "Eliminar";
             eliminarButton.Click += eliminarButton_Click;
             // 
@@ -160,7 +158,7 @@
             editarButton.Image = (Image)resources.GetObject("editarButton.Image");
             editarButton.ImageTransparentColor = Color.Magenta;
             editarButton.Name = "editarButton";
-            editarButton.Size = new Size(61, 29);
+            editarButton.Size = new Size(41, 22);
             editarButton.Text = "Editar";
             editarButton.Click += editarButton_Click;
             // 
@@ -170,7 +168,7 @@
             guardarButton.Image = (Image)resources.GetObject("guardarButton.Image");
             guardarButton.ImageTransparentColor = Color.Magenta;
             guardarButton.Name = "guardarButton";
-            guardarButton.Size = new Size(79, 29);
+            guardarButton.Size = new Size(53, 22);
             guardarButton.Text = "Guardar";
             guardarButton.Click += guardarButton_Click;
             // 
@@ -180,7 +178,7 @@
             cancelarButton.Image = (Image)resources.GetObject("cancelarButton.Image");
             cancelarButton.ImageTransparentColor = Color.Magenta;
             cancelarButton.Name = "cancelarButton";
-            cancelarButton.Size = new Size(82, 29);
+            cancelarButton.Size = new Size(57, 22);
             cancelarButton.Text = "Cancelar";
             cancelarButton.Click += cancelarButton_Click;
             // 
@@ -190,7 +188,7 @@
             datosButton.Image = (Image)resources.GetObject("datosButton.Image");
             datosButton.ImageTransparentColor = Color.Magenta;
             datosButton.Name = "datosButton";
-            datosButton.Size = new Size(133, 29);
+            datosButton.Size = new Size(87, 22);
             datosButton.Text = "Obtener Datos";
             datosButton.Click += datosButton_Click;
             // 
@@ -201,7 +199,7 @@
             salirButton.Image = (Image)resources.GetObject("salirButton.Image");
             salirButton.ImageTransparentColor = Color.Magenta;
             salirButton.Name = "salirButton";
-            salirButton.Size = new Size(49, 29);
+            salirButton.Size = new Size(33, 22);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
             salirButton.Click += salirButton_Click;
@@ -209,41 +207,45 @@
             // cbIDSucursal
             // 
             cbIDSucursal.FormattingEnabled = true;
-            cbIDSucursal.Location = new Point(134, 515);
+            cbIDSucursal.Location = new Point(94, 309);
+            cbIDSucursal.Margin = new Padding(2, 2, 2, 2);
             cbIDSucursal.Name = "cbIDSucursal";
-            cbIDSucursal.Size = new Size(182, 33);
+            cbIDSucursal.Size = new Size(129, 23);
             cbIDSucursal.TabIndex = 43;
             // 
             // cbTipoSala
             // 
             cbTipoSala.FormattingEnabled = true;
             cbTipoSala.Items.AddRange(new object[] { "Normal", "VIP", "3D" });
-            cbTipoSala.Location = new Point(547, 512);
+            cbTipoSala.Location = new Point(383, 307);
+            cbTipoSala.Margin = new Padding(2, 2, 2, 2);
             cbTipoSala.Name = "cbTipoSala";
-            cbTipoSala.Size = new Size(182, 33);
+            cbTipoSala.Size = new Size(129, 23);
             cbTipoSala.TabIndex = 44;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(818, 455);
+            label5.Location = new Point(573, 273);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(178, 25);
+            label5.Size = new Size(117, 15);
             label5.TabIndex = 46;
             label5.Text = "Cantidad de asientos";
             // 
             // txtAsientos
             // 
-            txtAsientos.Location = new Point(832, 492);
+            txtAsientos.Location = new Point(582, 295);
+            txtAsientos.Margin = new Padding(2, 2, 2, 2);
             txtAsientos.Name = "txtAsientos";
-            txtAsientos.Size = new Size(150, 31);
+            txtAsientos.Size = new Size(106, 23);
             txtAsientos.TabIndex = 47;
             // 
             // Sala
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1088, 568);
+            ClientSize = new Size(762, 341);
             Controls.Add(txtAsientos);
             Controls.Add(label5);
             Controls.Add(cbTipoSala);
@@ -256,6 +258,7 @@
             Controls.Add(label1);
             Controls.Add(dgvSala);
             Controls.Add(toolStrip1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Sala";
             Text = "Sala";
             ((System.ComponentModel.ISupportInitialize)dgvSala).EndInit();
