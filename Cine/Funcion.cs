@@ -126,7 +126,7 @@ namespace Cine
             datosButton.Enabled = false;
         }
 
-        private void guardarButton_Click(object sender, EventArgs e)
+        /*private void guardarButton_Click(object sender, EventArgs e)
         {
             string conexion = "Server=./localhost; Database=cineBD; Trusted_Connection=true;";
             string query = "INSERT INTO Funcion () VALUES ()";
@@ -146,11 +146,11 @@ namespace Cine
 
                         SqlCommand comando = new SqlCommand(nuevo, s);
                         //FECHA Y HORA DE LA FUNCION
-                        //comando.Parameters.AddWithValue( 
-                        //"@NombreGenero", nombreBox.Text.Trim());
+                        comando.Parameters.AddWithValue( 
+                        "@NombreGenero", nombreBox.Text.Trim());
 
-                        //comando.Parameters.AddWithValue(
-                        //"@DescripcionGenero", descripcionBox.Text.Trim());
+                        comando.Parameters.AddWithValue(
+                        "@DescripcionGenero", descripcionBox.Text.Trim());
 
                         int renglonesAfectados = comando.ExecuteNonQuery();
 
@@ -163,28 +163,28 @@ namespace Cine
                     {
                         string actualizar =
                             //FECHA Y HORA DE LA FUNCION
-                            //"UPDATE dbo.Genero SET " +
-                            //"NombreGenero = @NombreGenero, " +
-                            //"DescripcionGenero = @DescripcionGenero " +
-                            //"WHERE IDGenero = @IDGenero";
+                            "UPDATE dbo.Genero SET " +
+                            "NombreGenero = @NombreGenero, " +
+                            "DescripcionGenero = @DescripcionGenero " +
+                            "WHERE IDGenero = @IDGenero";
 
-                        //SqlCommand comando = new SqlCommand(actualizar, s);
+                        SqlCommand comando = new SqlCommand(actualizar, s);
 
-                        // comando.Parameters.AddWithValue(
-                        //"@NombreGenero", nombreBox.Text.Trim());
+                         comando.Parameters.AddWithValue(
+                        "@NombreGenero", nombreBox.Text.Trim());
 
-                        // comando.Parameters.AddWithValue(
-                        //"@DescripcionGenero", descripcionBox.Text.Trim());
+                         comando.Parameters.AddWithValue(
+                        "@DescripcionGenero", descripcionBox.Text.Trim());
 
-                        //comando.Parameters.AddWithValue(
-                        //"@IDGenero", Convert.ToInt32(idBox.Text));
+                        comando.Parameters.AddWithValue(
+                        "@IDGenero", Convert.ToInt32(idBox.Text));
 
-                        //int renglonesAfectados = comando.ExecuteNonQuery();
+                        int renglonesAfectados = comando.ExecuteNonQuery();
 
-                        //if (renglonesAfectados > 0)
-                        //{
-                        //  MessageBox.Show("Éxito al editar el registro");
-                        //}
+                        if (renglonesAfectados > 0)
+                        {
+                          MessageBox.Show("Éxito al editar el registro");
+                        }
                     }
                 }
                 LimpiarCampos();
@@ -197,6 +197,7 @@ namespace Cine
 
             LimpiarCampos();
         }
+        */
 
         private void cancelarButton_Click(object sender, EventArgs e)
         {
@@ -212,5 +213,6 @@ namespace Cine
         {
             CargarDatos();
         }
+
     }
 }
