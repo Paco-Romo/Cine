@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Genero));
-            duracionBox = new TextBox();
+            descripcionBox = new TextBox();
             nombreBox = new TextBox();
             idBox = new TextBox();
             label5 = new Label();
@@ -50,13 +50,13 @@
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // duracionBox
+            // descripcionBox
             // 
-            duracionBox.Location = new Point(421, 300);
-            duracionBox.Margin = new Padding(3, 2, 3, 2);
-            duracionBox.Name = "duracionBox";
-            duracionBox.Size = new Size(136, 23);
-            duracionBox.TabIndex = 21;
+            descripcionBox.Location = new Point(421, 300);
+            descripcionBox.Margin = new Padding(3, 2, 3, 2);
+            descripcionBox.Name = "descripcionBox";
+            descripcionBox.Size = new Size(136, 23);
+            descripcionBox.TabIndex = 21;
             // 
             // nombreBox
             // 
@@ -72,6 +72,7 @@
             idBox.Location = new Point(116, 300);
             idBox.Margin = new Padding(3, 2, 3, 2);
             idBox.Name = "idBox";
+            idBox.ReadOnly = true;
             idBox.Size = new Size(136, 23);
             idBox.TabIndex = 19;
             // 
@@ -117,7 +118,6 @@
             label1.Size = new Size(56, 15);
             label1.TabIndex = 14;
             label1.Text = "IDGenero";
-            label1.Click += label1_Click;
             // 
             // dgvPeliculas
             // 
@@ -160,6 +160,7 @@
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(54, 22);
             eliminarButton.Text = "Eliminar";
+            eliminarButton.Click += eliminarButton_Click;
             // 
             // editarButton
             // 
@@ -178,6 +179,7 @@
             guardarButton.Name = "guardarButton";
             guardarButton.Size = new Size(53, 22);
             guardarButton.Text = "Guardar";
+            guardarButton.Click += guardarButton_Click;
             // 
             // cancelarButton
             // 
@@ -208,13 +210,14 @@
             salirButton.Size = new Size(33, 22);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
+            salirButton.Click += salirButton_Click;
             // 
             // Genero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(duracionBox);
+            Controls.Add(descripcionBox);
             Controls.Add(nombreBox);
             Controls.Add(idBox);
             Controls.Add(label5);
@@ -234,7 +237,7 @@
         }
 
         #endregion
-        private TextBox duracionBox;
+        private TextBox descripcionBox;
         private TextBox nombreBox;
         private TextBox idBox;
         private Label label5;
