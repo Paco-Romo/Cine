@@ -185,7 +185,6 @@
             guardarButton.Name = "guardarButton";
             guardarButton.Size = new Size(53, 22);
             guardarButton.Text = "Guardar";
-            guardarButton.Click += guardarButton_Click;
             // 
             // cancelarButton
             // 

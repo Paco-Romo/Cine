@@ -34,6 +34,8 @@
             clasificaciónToolStripMenuItem = new ToolStripMenuItem();
             generoToolStripMenuItem = new ToolStripMenuItem();
             salaToolStripMenuItem = new ToolStripMenuItem();
+            tipoDeBoletoToolStripMenuItem = new ToolStripMenuItem();
+            ventaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             // 
             // tablasToolStripMenuItem
             // 
-            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, salaToolStripMenuItem });
+            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, salaToolStripMenuItem, tipoDeBoletoToolStripMenuItem, ventaToolStripMenuItem });
             tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
             tablasToolStripMenuItem.Size = new Size(76, 29);
             tablasToolStripMenuItem.Text = "Tablas";
@@ -82,6 +84,20 @@
             salaToolStripMenuItem.Text = "Sala";
             salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
             // 
+            // tipoDeBoletoToolStripMenuItem
+            // 
+            tipoDeBoletoToolStripMenuItem.Name = "tipoDeBoletoToolStripMenuItem";
+            tipoDeBoletoToolStripMenuItem.Size = new Size(270, 34);
+            tipoDeBoletoToolStripMenuItem.Text = "Tipo de Boleto";
+            tipoDeBoletoToolStripMenuItem.Click += tipoDeBoletoToolStripMenuItem_Click;
+            // 
+            // ventaToolStripMenuItem
+            // 
+            ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
+            ventaToolStripMenuItem.Size = new Size(270, 34);
+            ventaToolStripMenuItem.Text = "Venta";
+            ventaToolStripMenuItem.Click += ventaToolStripMenuItem_Click;
+            // 
             // Cine
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -106,5 +122,7 @@
         private ToolStripMenuItem clasificaciónToolStripMenuItem;
         private ToolStripMenuItem generoToolStripMenuItem;
         private ToolStripMenuItem salaToolStripMenuItem;
+        private ToolStripMenuItem tipoDeBoletoToolStripMenuItem;
+        private ToolStripMenuItem ventaToolStripMenuItem;
     }
 }

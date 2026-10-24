@@ -52,6 +52,7 @@
             // 
             // dtFecha
             // 
+            dtFecha.Enabled = false;
             dtFecha.Location = new Point(605, 504);
             dtFecha.Name = "dtFecha";
             dtFecha.Size = new Size(300, 31);

@@ -35,5 +35,17 @@ namespace Cine
             Sala sala = new Sala();
             sala.ShowDialog();
         }
+
+        private void tipoDeBoletoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoBoleto tipoBoleto = new TipoBoleto();
+            tipoBoleto.ShowDialog();
+        }
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta();
+            venta.ShowDialog();
+        }
     }
 }
