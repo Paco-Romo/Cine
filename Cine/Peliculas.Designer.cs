@@ -46,8 +46,8 @@
             idBox = new TextBox();
             nombreBox = new TextBox();
             duracionBox = new TextBox();
-            generoBox = new TextBox();
-            clasificacionBox = new TextBox();
+            generoBox = new ComboBox();
+            clasificacionBox = new ComboBox();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
             SuspendLayout();
@@ -80,6 +80,7 @@
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(54, 22);
             eliminarButton.Text = "Eliminar";
+            eliminarButton.Click += eliminarButton_Click;
             // 
             // editarButton
             // 
@@ -89,6 +90,7 @@
             editarButton.Name = "editarButton";
             editarButton.Size = new Size(41, 22);
             editarButton.Text = "Editar";
+            editarButton.Click += editarButton_Click;
             // 
             // guardarButton
             // 
@@ -98,6 +100,7 @@
             guardarButton.Name = "guardarButton";
             guardarButton.Size = new Size(53, 22);
             guardarButton.Text = "Guardar";
+            guardarButton.Click += guardarButton_Click;
             // 
             // cancelarButton
             // 
@@ -107,6 +110,7 @@
             cancelarButton.Name = "cancelarButton";
             cancelarButton.Size = new Size(57, 22);
             cancelarButton.Text = "Cancelar";
+            cancelarButton.Click += cancelarButton_Click;
             // 
             // datosButton
             // 
@@ -116,6 +120,7 @@
             datosButton.Name = "datosButton";
             datosButton.Size = new Size(87, 22);
             datosButton.Text = "Obtener Datos";
+            datosButton.Click += datosButton_Click;
             // 
             // salirButton
             // 
@@ -127,6 +132,7 @@
             salirButton.Size = new Size(33, 22);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
+            salirButton.Click += salirButton_Click;
             // 
             // dgvPeliculas
             // 
@@ -140,6 +146,8 @@
             dgvPeliculas.RowHeadersWidth = 51;
             dgvPeliculas.Size = new Size(679, 191);
             dgvPeliculas.TabIndex = 1;
+            dgvPeliculas.CellContentClick += dgvPeliculas_CellContentClick;
+            dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
             // 
             // label1
             // 
@@ -175,7 +183,7 @@
             label4.Name = "label4";
             label4.Size = new Size(56, 15);
             label4.TabIndex = 5;
-            label4.Text = "IDGenero";
+            label4.Text = "Genero";
             // 
             // label5
             // 
@@ -184,7 +192,7 @@
             label5.Name = "label5";
             label5.Size = new Size(84, 15);
             label5.TabIndex = 6;
-            label5.Text = "idClasificacion";
+            label5.Text = "Clasificacion";
             // 
             // idBox
             // 
@@ -274,7 +282,7 @@
         private TextBox idBox;
         private TextBox nombreBox;
         private TextBox duracionBox;
-        private TextBox generoBox;
-        private TextBox clasificacionBox;
+        private ComboBox generoBox;
+        private ComboBox clasificacionBox;
     }
 }

@@ -24,6 +24,22 @@ namespace Cine
             Genero genero = new Genero();
             genero.ShowDialog();
         }
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Estado estado = new Estado();
+            estado.ShowDialog();
+        }
+
+        private void ciudadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ciudad ciudad = new Ciudad();
+            ciudad.ShowDialog();
+        }
+
+        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sucursal sucursal = new Sucursal();
+            sucursal.ShowDialog();
 
         private void Cine_Load(object sender, EventArgs e)
         {
