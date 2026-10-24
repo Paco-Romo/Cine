@@ -80,6 +80,7 @@
             editarButton.Name = "editarButton";
             editarButton.Size = new Size(52, 24);
             editarButton.Text = "Editar";
+            editarButton.Click += editarButton_Click;
             // 
             // eliminarButton
             // 
@@ -89,6 +90,7 @@
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(67, 24);
             eliminarButton.Text = "Eliminar";
+            eliminarButton.Click += eliminarButton_Click;
             // 
             // guardarButton
             // 
@@ -98,6 +100,7 @@
             guardarButton.Name = "guardarButton";
             guardarButton.Size = new Size(66, 24);
             guardarButton.Text = "Guardar";
+            guardarButton.Click += guardarButton_Click;
             // 
             // cancelarButton
             // 
@@ -128,6 +131,7 @@
             salirButton.Name = "salirButton";
             salirButton.Size = new Size(42, 24);
             salirButton.Text = "Salir";
+            salirButton.Click += salirButton_Click;
             // 
             // dgvCiudad
             // 
@@ -140,6 +144,7 @@
             dgvCiudad.RowHeadersWidth = 51;
             dgvCiudad.Size = new Size(776, 236);
             dgvCiudad.TabIndex = 3;
+            dgvCiudad.SelectionChanged += dgvCiudad_SelectionChanged;
             // 
             // label1
             // 

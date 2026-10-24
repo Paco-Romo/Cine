@@ -80,6 +80,7 @@
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(67, 24);
             eliminarButton.Text = "Eliminar";
+            eliminarButton.Click += eliminarButton_Click;
             // 
             // editarButton
             // 
@@ -89,6 +90,7 @@
             editarButton.Name = "editarButton";
             editarButton.Size = new Size(52, 24);
             editarButton.Text = "Editar";
+            editarButton.Click += editarButton_Click;
             // 
             // guardarButton
             // 
@@ -108,6 +110,7 @@
             cancelarButton.Name = "cancelarButton";
             cancelarButton.Size = new Size(70, 24);
             cancelarButton.Text = "Cancelar";
+            cancelarButton.Click += cancelarButton_Click;
             // 
             // datosButton
             // 
@@ -142,6 +145,7 @@
             dgvPeliculas.RowHeadersWidth = 51;
             dgvPeliculas.Size = new Size(776, 255);
             dgvPeliculas.TabIndex = 1;
+            dgvPeliculas.CellContentClick += dgvPeliculas_CellContentClick;
             dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
             // 
             // label1

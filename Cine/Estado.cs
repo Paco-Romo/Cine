@@ -174,6 +174,21 @@ namespace Cine
             }
 
             CargarEstados();
+
+            idBox.Enabled = false;
+            nombreBox.Enabled = false;
+            siglaBox.Enabled = false;
+            claveBox.Enabled = false;
+
+            guardarButton.Enabled = false;
+            cancelarButton.Enabled = false;
+            nuevoButton.Enabled = true;
+            editarButton.Enabled = true;
+            eliminarButton.Enabled = true;
+            obtenerButton.Enabled = true;
+            salirButton.Enabled = true;
+
+            dgvEstado.Enabled = true;
         }
 
         private void obtenerButton_Click(object sender, EventArgs e)

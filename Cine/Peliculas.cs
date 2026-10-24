@@ -154,12 +154,15 @@ namespace Cine
                     using (SqlConnection cargar = ObtenerConexion())
                     {
                         cargar.Open();
-                        String agrega = "INSERT INTO dbo.Pelicula (NombrePelicula,duracion,IDgenero,IDclasificacion)\r\n"
-                        + "VALUES ('" + nombreBox.Text + "', '" + duracionBox.Text + "', '" + generoBox.SelectedValue + "', '" + clasificacionBox.SelectedValue + "')";
+                        String agrega = "INSERT INTO dbo.Pelicula (NombrePelicula,Duracion,IDGenero,IDClasificacion)\r\n"
+                        + "VALUES (@NombrePelicula, @Duracion, @IDGenero, @IDClasificacion )";
                         SqlCommand comando = new SqlCommand(agrega, cargar);
-                        SqlDataAdapter adapter = new SqlDataAdapter(comando);
-                        DataTable datos = new DataTable();
-                        adapter.Fill(datos);
+
+                        comando.Parameters.AddWithValue("@IDPelicula", idBox.Text);
+                        comando.Parameters.AddWithValue("@NombrePelicula", nombreBox.Text);
+                        comando.Parameters.AddWithValue("@Duracion", duracionBox.Text);
+                        comando.Parameters.AddWithValue("@IDGenero", generoBox.SelectedValue);
+                        comando.Parameters.AddWithValue("@IDClasificacion", clasificacionBox.SelectedValue);
 
                         int renglonesAfectados = comando.ExecuteNonQuery();
 
@@ -201,6 +204,150 @@ namespace Cine
                 salirButton.Enabled = true;
 
                 dgvPeliculas.Enabled = true;
+            }
+            else
+            {
+                using (SqlConnection cargar = ObtenerConexion())
+                {
+                    cargar.Open();
+
+                    string editar =
+                        "UPDATE dbo.Pelicula " +
+                        "SET NombrePelicula = @NombrePelicula, Duracion = @Duracion , IDGenero = @IDGenero " +
+                        "WHERE IDPelicula = @IDPelicula";
+
+                    SqlCommand comando = new SqlCommand(editar, cargar);
+
+                    comando.Parameters.AddWithValue("@IDPelicula", idBox.Text);
+                    comando.Parameters.AddWithValue("@Duracion", duracionBox.Text);
+                    comando.Parameters.AddWithValue("@IDGenero", generoBox.SelectedValue);
+                    comando.Parameters.AddWithValue("@IDClasificacion", clasificacionBox.SelectedValue);
+                    comando.Parameters.AddWithValue("@NombrePelicula", nombreBox.Text);
+
+                    int renglonesAfectados = comando.ExecuteNonQuery();
+
+                    if (renglonesAfectados > 0)
+                    {
+                        MessageBox.Show("Éxito al editar el registro");
+                    }
+                }
+            }
+
+            CargarPeliculas();
+
+            idBox.Text = "0";
+            duracionBox.Text = "";
+            generoBox.Text = "";
+            clasificacionBox.Text = "";
+            nombreBox.Text = "";
+
+            duracionBox.Enabled = false;
+            generoBox.Enabled = false;
+            clasificacionBox.Enabled = false;
+            nombreBox.Enabled = false;
+
+            guardarButton.Enabled = false;
+            cancelarButton.Enabled = false;
+            nuevoButton.Enabled = true;
+            editarButton.Enabled = true;
+            eliminarButton.Enabled = true;
+            datosButton.Enabled = true;
+            salirButton.Enabled = true;
+
+            dgvPeliculas.Enabled = true;
+        }
+
+        private void dgvPeliculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado =
+                MessageBox.Show("¿Deseas cancelar el registro?", "Cancelar?"
+                        , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                idBox.Text = "0";
+                generoBox.Text = "";
+                clasificacionBox.Text = "";
+                duracionBox.Text = "";
+                nombreBox.Text = "";
+
+                generoBox.Enabled = false;
+                clasificacionBox.Enabled = false;
+                duracionBox.Enabled = false;
+                nombreBox.Enabled = false;
+
+                guardarButton.Enabled = false;
+                cancelarButton.Enabled = false;
+                nuevoButton.Enabled = true;
+                editarButton.Enabled = true;
+                eliminarButton.Enabled = true;
+                datosButton.Enabled = true;
+                salirButton.Enabled = true;
+
+                dgvPeliculas.Enabled = true;
+            }
+        }
+
+        private void editarButton_Click(object sender, EventArgs e)
+        {
+            if (dgvPeliculas.SelectedRows.Count == 1)
+            {
+                editar = true;
+
+                nombreBox.Enabled = true;
+                duracionBox.Enabled = true;
+                generoBox.Enabled = true;
+                clasificacionBox.Enabled = true;
+
+                guardarButton.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un registro para editar");
+            }
+        }
+
+        private void eliminarButton_Click(object sender, EventArgs e)
+        {
+            if (dgvPeliculas.SelectedRows.Count == 1)
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "¿Desea eliminar esta Ciudad?",
+                    "Eliminar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    using (SqlConnection cargar = ObtenerConexion())
+                    {
+                        cargar.Open();
+
+                        string eliminar =
+                            "DELETE FROM dbo.Pelicula " +
+                            "WHERE IDPelicula = @IDPelicula";
+
+                        SqlCommand comando = new SqlCommand(eliminar, cargar);
+
+                        comando.Parameters.AddWithValue(
+                            "@IDPelicula", idBox.Text);
+
+                        int renglonesAfectados = comando.ExecuteNonQuery();
+
+                        if (renglonesAfectados > 0)
+                        {
+                            MessageBox.Show("Éxito al eliminar el registro");
+                        }
+                    }
+
+                    CargarPeliculas();
+
+                }
             }
         }
     }
