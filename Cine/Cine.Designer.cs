@@ -33,6 +33,9 @@
             películaToolStripMenuItem = new ToolStripMenuItem();
             clasificaciónToolStripMenuItem = new ToolStripMenuItem();
             generoToolStripMenuItem = new ToolStripMenuItem();
+            estadoToolStripMenuItem = new ToolStripMenuItem();
+            ciudadToolStripMenuItem = new ToolStripMenuItem();
+            sucursalToolStripMenuItem = new ToolStripMenuItem();
             salaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -43,38 +46,59 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tablasToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
             menuStrip1.Size = new Size(1086, 33);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // tablasToolStripMenuItem
             // 
-            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, salaToolStripMenuItem });
+            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, salaToolStripMenuItem }, estadoToolStripMenuItem, ciudadToolStripMenuItem, sucursalToolStripMenuItem });
             tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            tablasToolStripMenuItem.Size = new Size(76, 29);
+            tablasToolStripMenuItem.Size = new Size(64, 24);
             tablasToolStripMenuItem.Text = "Tablas";
             // 
             // películaToolStripMenuItem
             // 
             películaToolStripMenuItem.Name = "películaToolStripMenuItem";
-            películaToolStripMenuItem.Size = new Size(270, 34);
+            películaToolStripMenuItem.Size = new Size(224, 26);
             películaToolStripMenuItem.Text = "Película";
             películaToolStripMenuItem.Click += películaToolStripMenuItem_Click;
             // 
             // clasificaciónToolStripMenuItem
             // 
             clasificaciónToolStripMenuItem.Name = "clasificaciónToolStripMenuItem";
-            clasificaciónToolStripMenuItem.Size = new Size(270, 34);
+            clasificaciónToolStripMenuItem.Size = new Size(224, 26);
             clasificaciónToolStripMenuItem.Text = "Clasificación";
             clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
             // 
             // generoToolStripMenuItem
             // 
             generoToolStripMenuItem.Name = "generoToolStripMenuItem";
-            generoToolStripMenuItem.Size = new Size(270, 34);
+            generoToolStripMenuItem.Size = new Size(224, 26);
             generoToolStripMenuItem.Text = "Genero";
             generoToolStripMenuItem.Click += generoToolStripMenuItem_Click;
             // 
+            // estadoToolStripMenuItem
+            // 
+            estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
+            estadoToolStripMenuItem.Size = new Size(224, 26);
+            estadoToolStripMenuItem.Text = "Estado";
+            estadoToolStripMenuItem.Click += estadoToolStripMenuItem_Click;
+            // 
+            // ciudadToolStripMenuItem
+            // 
+            ciudadToolStripMenuItem.Name = "ciudadToolStripMenuItem";
+            ciudadToolStripMenuItem.Size = new Size(224, 26);
+            ciudadToolStripMenuItem.Text = "Ciudad";
+            ciudadToolStripMenuItem.Click += ciudadToolStripMenuItem_Click;
+            // 
+            // sucursalToolStripMenuItem
+            // 
+            sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
+            sucursalToolStripMenuItem.Size = new Size(224, 26);
+            sucursalToolStripMenuItem.Text = "Sucursal";
+            sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
             // salaToolStripMenuItem
             // 
             salaToolStripMenuItem.Name = "salaToolStripMenuItem";
@@ -84,11 +108,12 @@
             // 
             // Cine
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1086, 532);
+            ClientSize = new Size(868, 425);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(2);
             Name = "Cine";
             Text = "Cine";
             Load += Cine_Load;
@@ -105,6 +130,9 @@
         private ToolStripMenuItem películaToolStripMenuItem;
         private ToolStripMenuItem clasificaciónToolStripMenuItem;
         private ToolStripMenuItem generoToolStripMenuItem;
+        private ToolStripMenuItem estadoToolStripMenuItem;
+        private ToolStripMenuItem ciudadToolStripMenuItem;
+        private ToolStripMenuItem sucursalToolStripMenuItem;
         private ToolStripMenuItem salaToolStripMenuItem;
     }
 }
