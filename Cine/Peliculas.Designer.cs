@@ -70,7 +70,6 @@
             nuevoButton.Name = "nuevoButton";
             nuevoButton.Size = new Size(46, 22);
             nuevoButton.Text = "Nuevo";
-            nuevoButton.Click += nuevoButton_Click;
             // 
             // eliminarButton
             // 

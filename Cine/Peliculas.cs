@@ -350,10 +350,5 @@ namespace Cine
                 }
             }
         }
-
-        private void nuevoButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
