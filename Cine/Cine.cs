@@ -40,6 +40,16 @@ namespace Cine
         {
             Sucursal sucursal = new Sucursal();
             sucursal.ShowDialog();
+
+        private void Cine_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sala sala = new Sala();
+            sala.ShowDialog();
         }
     }
 }

@@ -36,6 +36,7 @@
             estadoToolStripMenuItem = new ToolStripMenuItem();
             ciudadToolStripMenuItem = new ToolStripMenuItem();
             sucursalToolStripMenuItem = new ToolStripMenuItem();
+            salaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,13 +47,13 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(868, 28);
+            menuStrip1.Size = new Size(1086, 33);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // tablasToolStripMenuItem
             // 
-            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, estadoToolStripMenuItem, ciudadToolStripMenuItem, sucursalToolStripMenuItem });
+            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, salaToolStripMenuItem }, estadoToolStripMenuItem, ciudadToolStripMenuItem, sucursalToolStripMenuItem });
             tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
             tablasToolStripMenuItem.Size = new Size(64, 24);
             tablasToolStripMenuItem.Text = "Tablas";
@@ -98,6 +99,12 @@
             sucursalToolStripMenuItem.Size = new Size(224, 26);
             sucursalToolStripMenuItem.Text = "Sucursal";
             sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
+            // salaToolStripMenuItem
+            // 
+            salaToolStripMenuItem.Name = "salaToolStripMenuItem";
+            salaToolStripMenuItem.Size = new Size(270, 34);
+            salaToolStripMenuItem.Text = "Sala";
+            salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
             // 
             // Cine
             // 
@@ -109,6 +116,7 @@
             Margin = new Padding(2);
             Name = "Cine";
             Text = "Cine";
+            Load += Cine_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -125,5 +133,6 @@
         private ToolStripMenuItem estadoToolStripMenuItem;
         private ToolStripMenuItem ciudadToolStripMenuItem;
         private ToolStripMenuItem sucursalToolStripMenuItem;
+        private ToolStripMenuItem salaToolStripMenuItem;
     }
 }
