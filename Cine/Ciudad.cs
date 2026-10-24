@@ -69,9 +69,9 @@ namespace Cine
             {
                 cargar.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Ciudad", cargar);
-                DataTable estado = new DataTable();
-                adapter.Fill(estado);
-                dgvCiudad.DataSource = estado;
+                DataTable ciudad = new DataTable();
+                adapter.Fill(ciudad);
+                dgvCiudad.DataSource = ciudad;
                 cargar.Close();
 
             }

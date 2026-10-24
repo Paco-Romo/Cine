@@ -35,5 +35,11 @@ namespace Cine
             Ciudad ciudad = new Ciudad();
             ciudad.ShowDialog();
         }
+
+        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sucursal sucursal = new Sucursal();
+            sucursal.ShowDialog();
+        }
     }
 }

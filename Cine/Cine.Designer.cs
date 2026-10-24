@@ -35,6 +35,7 @@
             generoToolStripMenuItem = new ToolStripMenuItem();
             estadoToolStripMenuItem = new ToolStripMenuItem();
             ciudadToolStripMenuItem = new ToolStripMenuItem();
+            sucursalToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             // tablasToolStripMenuItem
             // 
-            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, estadoToolStripMenuItem, ciudadToolStripMenuItem });
+            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, estadoToolStripMenuItem, ciudadToolStripMenuItem, sucursalToolStripMenuItem });
             tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
             tablasToolStripMenuItem.Size = new Size(64, 24);
             tablasToolStripMenuItem.Text = "Tablas";
@@ -91,6 +92,13 @@
             ciudadToolStripMenuItem.Text = "Ciudad";
             ciudadToolStripMenuItem.Click += ciudadToolStripMenuItem_Click;
             // 
+            // sucursalToolStripMenuItem
+            // 
+            sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
+            sucursalToolStripMenuItem.Size = new Size(224, 26);
+            sucursalToolStripMenuItem.Text = "Sucursal";
+            sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
+            // 
             // Cine
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -116,5 +124,6 @@
         private ToolStripMenuItem generoToolStripMenuItem;
         private ToolStripMenuItem estadoToolStripMenuItem;
         private ToolStripMenuItem ciudadToolStripMenuItem;
+        private ToolStripMenuItem sucursalToolStripMenuItem;
     }
 }
