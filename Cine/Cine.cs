@@ -7,10 +7,10 @@ namespace Cine
             InitializeComponent();
         }
 
-        private void películaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ciudadToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Peliculas peliculas = new Peliculas();
-            peliculas.ShowDialog();
+            Ciudad ciudad = new Ciudad();
+            ciudad.ShowDialog();
         }
 
         private void clasificaciónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -19,31 +19,40 @@ namespace Cine
             clasificacion.ShowDialog();
         }
 
-        private void generoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Genero genero = new Genero();
-            genero.ShowDialog();
+            Cliente cliente = new Cliente();
+            cliente.ShowDialog();
         }
+
         private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Estado estado = new Estado();
             estado.ShowDialog();
         }
 
-        private void ciudadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ciudad ciudad = new Ciudad();
-            ciudad.ShowDialog();
+            Funcion funcion = new Funcion();
+            funcion.ShowDialog();
         }
 
-        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void géneroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Sucursal sucursal = new Sucursal();
-            sucursal.ShowDialog();
+            Genero g = new Genero();
+            g.ShowDialog();
+        }
 
-        private void Cine_Load(object sender, EventArgs e)
+        private void númeroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            numero numero = new numero();
+            numero.ShowDialog();
+        }
 
+        private void pelíiculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Peliculas peliculas = new Peliculas();
+            peliculas.ShowDialog();
         }
 
         private void salaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,10 +61,16 @@ namespace Cine
             sala.ShowDialog();
         }
 
-        private void tipoDeBoletoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TipoBoleto tipoBoleto = new TipoBoleto();
-            tipoBoleto.ShowDialog();
+            Sucursal sucursal = new Sucursal();
+            sucursal.ShowDialog();
+        }
+
+        private void tipoBoletoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoBoleto tipo = new TipoBoleto();
+            tipo.ShowDialog();
         }
 
         private void ventaToolStripMenuItem_Click(object sender, EventArgs e)

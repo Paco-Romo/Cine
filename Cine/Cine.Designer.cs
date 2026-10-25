@@ -30,14 +30,17 @@
         {
             menuStrip1 = new MenuStrip();
             tablasToolStripMenuItem = new ToolStripMenuItem();
-            películaToolStripMenuItem = new ToolStripMenuItem();
-            clasificaciónToolStripMenuItem = new ToolStripMenuItem();
-            generoToolStripMenuItem = new ToolStripMenuItem();
-            estadoToolStripMenuItem = new ToolStripMenuItem();
             ciudadToolStripMenuItem = new ToolStripMenuItem();
-            sucursalToolStripMenuItem = new ToolStripMenuItem();
+            clasificaciónToolStripMenuItem = new ToolStripMenuItem();
+            clienteToolStripMenuItem = new ToolStripMenuItem();
+            estadoToolStripMenuItem = new ToolStripMenuItem();
+            funcionToolStripMenuItem = new ToolStripMenuItem();
+            géneroToolStripMenuItem = new ToolStripMenuItem();
+            númeroToolStripMenuItem = new ToolStripMenuItem();
+            pelíiculaToolStripMenuItem = new ToolStripMenuItem();
             salaToolStripMenuItem = new ToolStripMenuItem();
-            tipoDeBoletoToolStripMenuItem = new ToolStripMenuItem();
+            sucursalToolStripMenuItem = new ToolStripMenuItem();
+            tipoBoletoToolStripMenuItem = new ToolStripMenuItem();
             ventaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -48,59 +51,73 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tablasToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(1086, 33);
+            menuStrip1.Size = new Size(1076, 33);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // tablasToolStripMenuItem
             // 
-            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películaToolStripMenuItem, clasificaciónToolStripMenuItem, generoToolStripMenuItem, salaToolStripMenuItem }, estadoToolStripMenuItem, ciudadToolStripMenuItem, sucursalToolStripMenuItem }, tipoDeBoletoToolStripMenuItem, ventaToolStripMenuItem});
+            tablasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ciudadToolStripMenuItem, clasificaciónToolStripMenuItem, clienteToolStripMenuItem, estadoToolStripMenuItem, funcionToolStripMenuItem, géneroToolStripMenuItem, númeroToolStripMenuItem, pelíiculaToolStripMenuItem, salaToolStripMenuItem, sucursalToolStripMenuItem, tipoBoletoToolStripMenuItem, ventaToolStripMenuItem });
             tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            tablasToolStripMenuItem.Size = new Size(64, 24);
+            tablasToolStripMenuItem.Size = new Size(76, 29);
             tablasToolStripMenuItem.Text = "Tablas";
-            // 
-            // películaToolStripMenuItem
-            // 
-            películaToolStripMenuItem.Name = "películaToolStripMenuItem";
-            películaToolStripMenuItem.Size = new Size(224, 26);
-            películaToolStripMenuItem.Text = "Película";
-            películaToolStripMenuItem.Click += películaToolStripMenuItem_Click;
-            // 
-            // clasificaciónToolStripMenuItem
-            // 
-            clasificaciónToolStripMenuItem.Name = "clasificaciónToolStripMenuItem";
-            clasificaciónToolStripMenuItem.Size = new Size(224, 26);
-            clasificaciónToolStripMenuItem.Text = "Clasificación";
-            clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
-            // 
-            // generoToolStripMenuItem
-            // 
-            generoToolStripMenuItem.Name = "generoToolStripMenuItem";
-            generoToolStripMenuItem.Size = new Size(224, 26);
-            generoToolStripMenuItem.Text = "Genero";
-            generoToolStripMenuItem.Click += generoToolStripMenuItem_Click;
-            // 
-            // estadoToolStripMenuItem
-            // 
-            estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            estadoToolStripMenuItem.Size = new Size(224, 26);
-            estadoToolStripMenuItem.Text = "Estado";
-            estadoToolStripMenuItem.Click += estadoToolStripMenuItem_Click;
             // 
             // ciudadToolStripMenuItem
             // 
             ciudadToolStripMenuItem.Name = "ciudadToolStripMenuItem";
-            ciudadToolStripMenuItem.Size = new Size(224, 26);
+            ciudadToolStripMenuItem.Size = new Size(270, 34);
             ciudadToolStripMenuItem.Text = "Ciudad";
-            ciudadToolStripMenuItem.Click += ciudadToolStripMenuItem_Click;
+            ciudadToolStripMenuItem.Click += ciudadToolStripMenuItem_Click_1;
             // 
-            // sucursalToolStripMenuItem
+            // clasificaciónToolStripMenuItem
             // 
-            sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
-            sucursalToolStripMenuItem.Size = new Size(224, 26);
-            sucursalToolStripMenuItem.Text = "Sucursal";
-            sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
+            clasificaciónToolStripMenuItem.Name = "clasificaciónToolStripMenuItem";
+            clasificaciónToolStripMenuItem.Size = new Size(270, 34);
+            clasificaciónToolStripMenuItem.Text = "Clasificación";
+            clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
+            // 
+            // clienteToolStripMenuItem
+            // 
+            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            clienteToolStripMenuItem.Size = new Size(270, 34);
+            clienteToolStripMenuItem.Text = "Cliente";
+            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
+            // 
+            // estadoToolStripMenuItem
+            // 
+            estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
+            estadoToolStripMenuItem.Size = new Size(270, 34);
+            estadoToolStripMenuItem.Text = "Estado";
+            estadoToolStripMenuItem.Click += estadoToolStripMenuItem_Click;
+            // 
+            // funcionToolStripMenuItem
+            // 
+            funcionToolStripMenuItem.Name = "funcionToolStripMenuItem";
+            funcionToolStripMenuItem.Size = new Size(270, 34);
+            funcionToolStripMenuItem.Text = "Función";
+            funcionToolStripMenuItem.Click += funcionToolStripMenuItem_Click;
+            // 
+            // géneroToolStripMenuItem
+            // 
+            géneroToolStripMenuItem.Name = "géneroToolStripMenuItem";
+            géneroToolStripMenuItem.Size = new Size(270, 34);
+            géneroToolStripMenuItem.Text = "Género";
+            géneroToolStripMenuItem.Click += géneroToolStripMenuItem_Click;
+            // 
+            // númeroToolStripMenuItem
+            // 
+            númeroToolStripMenuItem.Name = "númeroToolStripMenuItem";
+            númeroToolStripMenuItem.Size = new Size(270, 34);
+            númeroToolStripMenuItem.Text = "Número";
+            númeroToolStripMenuItem.Click += númeroToolStripMenuItem_Click;
+            // 
+            // pelíiculaToolStripMenuItem
+            // 
+            pelíiculaToolStripMenuItem.Name = "pelíiculaToolStripMenuItem";
+            pelíiculaToolStripMenuItem.Size = new Size(270, 34);
+            pelíiculaToolStripMenuItem.Text = "Pelíicula";
+            pelíiculaToolStripMenuItem.Click += pelíiculaToolStripMenuItem_Click;
+            // 
             // salaToolStripMenuItem
             // 
             salaToolStripMenuItem.Name = "salaToolStripMenuItem";
@@ -108,12 +125,19 @@
             salaToolStripMenuItem.Text = "Sala";
             salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
             // 
-            // tipoDeBoletoToolStripMenuItem
+            // sucursalToolStripMenuItem
             // 
-            tipoDeBoletoToolStripMenuItem.Name = "tipoDeBoletoToolStripMenuItem";
-            tipoDeBoletoToolStripMenuItem.Size = new Size(270, 34);
-            tipoDeBoletoToolStripMenuItem.Text = "Tipo de Boleto";
-            tipoDeBoletoToolStripMenuItem.Click += tipoDeBoletoToolStripMenuItem_Click;
+            sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
+            sucursalToolStripMenuItem.Size = new Size(270, 34);
+            sucursalToolStripMenuItem.Text = "Sucursal";
+            sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
+            // 
+            // tipoBoletoToolStripMenuItem
+            // 
+            tipoBoletoToolStripMenuItem.Name = "tipoBoletoToolStripMenuItem";
+            tipoBoletoToolStripMenuItem.Size = new Size(270, 34);
+            tipoBoletoToolStripMenuItem.Text = "Tipo Boleto";
+            tipoBoletoToolStripMenuItem.Click += tipoBoletoToolStripMenuItem_Click;
             // 
             // ventaToolStripMenuItem
             // 
@@ -124,33 +148,33 @@
             // 
             // Cine
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(868, 425);
+            ClientSize = new Size(1076, 446);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
             Name = "Cine";
-            Text = "Cine";
-            Load += Cine_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
 
+
         private MenuStrip menuStrip1;
         private ToolStripMenuItem tablasToolStripMenuItem;
-        private ToolStripMenuItem películaToolStripMenuItem;
-        private ToolStripMenuItem clasificaciónToolStripMenuItem;
-        private ToolStripMenuItem generoToolStripMenuItem;
-        private ToolStripMenuItem estadoToolStripMenuItem;
         private ToolStripMenuItem ciudadToolStripMenuItem;
-        private ToolStripMenuItem sucursalToolStripMenuItem;
+        private ToolStripMenuItem clasificaciónToolStripMenuItem;
+        private ToolStripMenuItem clienteToolStripMenuItem;
+        private ToolStripMenuItem estadoToolStripMenuItem;
+        private ToolStripMenuItem funcionToolStripMenuItem;
+        private ToolStripMenuItem géneroToolStripMenuItem;
+        private ToolStripMenuItem númeroToolStripMenuItem;
+        private ToolStripMenuItem pelíiculaToolStripMenuItem;
         private ToolStripMenuItem salaToolStripMenuItem;
-        private ToolStripMenuItem tipoDeBoletoToolStripMenuItem;
+        private ToolStripMenuItem sucursalToolStripMenuItem;
+        private ToolStripMenuItem tipoBoletoToolStripMenuItem;
         private ToolStripMenuItem ventaToolStripMenuItem;
     }
 }
