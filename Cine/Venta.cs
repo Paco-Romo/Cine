@@ -42,7 +42,8 @@ namespace Cine
             using (SqlConnection cargar = ObtenerConexion())
             {
                 cargar.Open();
-                String consulta = "SELECT V.IDVenta, C.IDCliente AS Cliente,\r\n\tP.NombrePelicula As Función, TBO.Clave AS Boleto, V.Precio\r\nFROM Venta AS V\r\nINNER JOIN Funcion AS F\r\n\tON V.IDFuncion=F.IDFuncion\r\nINNER JOIN Pelicula AS P\r\n\tON F.IDPelicula=P.IDPelicula\r\nINNER JOIN Cliente AS C\r\n\tON V.IDCliente=C.IDCliente\r\nINNER JOIN TipoBoleto AS TBO\r\n\tON V.IDTipoBoleto=TBO.IDTipoBoleto";
+                String consulta = "SELECT V.IDVenta, C.IDCliente AS Cliente," +
+                    "\r\n\tP.NombrePelicula As Función, TBO.Clave AS Boleto, V.Precio\r\nFROM Venta AS V\r\nINNER JOIN Funcion AS F\r\n\tON V.IDFuncion=F.IDFuncion\r\nINNER JOIN Pelicula AS P\r\n\tON F.IDPelicula=P.IDPelicula\r\nINNER JOIN Cliente AS C\r\n\tON V.IDCliente=C.IDCliente\r\nINNER JOIN TipoBoleto AS TBO\r\n\tON V.IDTipoBoleto=TBO.IDTipoBoleto";
                 SqlDataAdapter adapter = new SqlDataAdapter(consulta, cargar);
                 DataTable peliculas = new DataTable();
                 adapter.Fill(peliculas);
@@ -73,7 +74,7 @@ namespace Cine
                     adapter.Fill(datos);
 
                     cbFuncion.DataSource = datos;
-                    cbFuncion.ValueMember = "IDFuncion";
+                    cbFuncion.ValueMember = "Función";
                     cbFuncion.DisplayMember = "Función";
                     cbFuncion.SelectedIndex = -1;
                 }
@@ -103,7 +104,7 @@ namespace Cine
                     adapter.Fill(datos);
 
                     cbTipoBoleto.DataSource = datos;
-                    cbTipoBoleto.ValueMember = "IDTipoBoleto";
+                    cbTipoBoleto.ValueMember = "Clave";
                     cbTipoBoleto.DisplayMember = "Clave";
                     cbTipoBoleto.SelectedIndex = -1;
                 }
@@ -223,9 +224,9 @@ namespace Cine
             if (dgvVenta.SelectedRows.Count == 1)
             {
                 txtIDVenta.Text = dgvVenta.SelectedRows[0].Cells["IDVenta"].Value.ToString();
-                cbCliente.SelectedValue = dgvVenta.SelectedRows[0].Cells["IDCliente"].Value;
-                cbFuncion.SelectedValue = dgvVenta.SelectedRows[0].Cells["IDFuncion"].Value;
-                cbTipoBoleto.SelectedValue = dgvVenta.SelectedRows[0].Cells["IDTipoBoleto"].Value;
+                cbCliente.SelectedValue = dgvVenta.SelectedRows[0].Cells["Cliente"].Value;
+                cbFuncion.SelectedValue = dgvVenta.SelectedRows[0].Cells[2].Value;
+                cbTipoBoleto.SelectedValue = dgvVenta.SelectedRows[0].Cells["Boleto"].Value;
                 txtPrecio.Text = dgvVenta.SelectedRows[0].Cells["Precio"].Value.ToString();
             }
         }
