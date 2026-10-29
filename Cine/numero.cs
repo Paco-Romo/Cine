@@ -55,7 +55,7 @@ namespace Cine
                 DataTable numero = new DataTable();
                 adapter.Fill(numero);
                 MessageBox.Show($"Filas cargadas: {numero.Rows.Count}");
-                dgvPeliculas.DataSource = numero;
+                dgvNumeros.DataSource = numero;
 
             }
         }
@@ -80,9 +80,9 @@ namespace Cine
                 using (SqlConnection conexion = ObtenerConexion())
                 {
                     conexion.Open();
-                    string query = "DELETE FROM Numero WHERE numbox = @numero";
+                    string query = "DELETE FROM Numero WHERE num = @num";
                     SqlCommand command = new SqlCommand(query, conexion);
-                    command.Parameters.AddWithValue("@numero", numBox.Text);
+                    command.Parameters.AddWithValue("@num", numBox.Text);
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
@@ -187,6 +187,21 @@ namespace Cine
         private void salirButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvNumeros_CellContentClick(object sender, EventArgs e)
+        {
+            if (dgvNumeros.SelectedRows.Count == 1)
+            {
+                DataGridViewRow r = dgvNumeros.SelectedRows[0];
+
+                if (r.Cells["num"].Value != null)
+                {
+                    numBox.Text =
+                        r.Cells["num"].Value.ToString();
+                }
+            }
+
         }
     }
 }

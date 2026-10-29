@@ -60,26 +60,6 @@ namespace Cine
             }
         }
 
-        private void dgvFuncion_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvFuncion.SelectedRows.Count == 1)
-            {
-                DataGridViewRow r = dgvFuncion.SelectedRows[0];
-
-                if (r.Cells["IDFuncion"].Value != null)
-                {
-                    IDFunBox.Text =
-                        r.Cells["IDFuncion"].Value.ToString();
-
-                    IDPeliBox.Text =
-                        r.Cells["IDPelicula"].Value.ToString();
-
-                    IDSalaBox.Text =
-                        r.Cells["IDSala"].Value.ToString();
-                }
-            }
-        }
-
         private void nuevoButton_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
@@ -213,6 +193,24 @@ namespace Cine
         {
             CargarDatos();
         }
+        private void dgvFuncion_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvFuncion.SelectedRows.Count == 1)
+            {
+                DataGridViewRow r = dgvFuncion.SelectedRows[0];
 
+                if (r.Cells["IDFuncion"].Value != null)
+                {
+                    IDFunBox.Text =
+                        r.Cells["IDFuncion"].Value.ToString();
+
+                    IDPeliBox.Text =
+                        r.Cells["IDPelicula"].Value.ToString();
+
+                    IDSalaBox.Text =
+                        r.Cells["IDSala"].Value.ToString();
+                }
+            }
+        }
     }
 }

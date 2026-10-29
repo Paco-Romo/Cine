@@ -232,5 +232,10 @@ namespace Cine
         {
             this.Close();
         }
+
+        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -105,9 +105,9 @@ namespace Cine
                 using (SqlConnection conexion = ObtenerConexion())
                 {
                     conexion.Open();
-                    string query = "DELETE FROM Genero WHERE Idbox = @IdGenero";
+                    string query = "DELETE FROM Genero WHERE IDGenero = @IDGenero";
                     SqlCommand command = new SqlCommand(query, conexion);
-                    command.Parameters.AddWithValue("@IdGenero", idBox.Text);
+                    command.Parameters.AddWithValue("@IDGenero", idBox.Text);
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
@@ -133,7 +133,7 @@ namespace Cine
             else
             {
                 string conexion = "Server=./localhost; Database=cineBD; Trusted_Connection=true;";
-                string query = "INSERT INTO Genero (NombreGenero, DescripcionGenero) VALUES (@nombre, @descripcion)";
+                string query = "INSERT INTO Genero (NombreGenero, DescripcionGenero VALUES (@nombre, @DescripcionGenero)";
 
                 try
                 {

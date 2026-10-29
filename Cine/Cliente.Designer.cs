@@ -56,62 +56,67 @@
             // 
             // nombreBox
             // 
-            nombreBox.Location = new Point(116, 417);
-            nombreBox.Margin = new Padding(3, 2, 3, 2);
+            nombreBox.Location = new Point(166, 695);
+            nombreBox.Margin = new Padding(4, 3, 4, 3);
             nombreBox.Name = "nombreBox";
-            nombreBox.Size = new Size(136, 23);
+            nombreBox.Size = new Size(193, 31);
             nombreBox.TabIndex = 30;
             // 
             // IDCliBox
             // 
             IDCliBox.Enabled = false;
-            IDCliBox.Location = new Point(116, 334);
-            IDCliBox.Margin = new Padding(3, 2, 3, 2);
+            IDCliBox.Location = new Point(166, 557);
+            IDCliBox.Margin = new Padding(4, 3, 4, 3);
             IDCliBox.Name = "IDCliBox";
             IDCliBox.ReadOnly = true;
-            IDCliBox.Size = new Size(136, 23);
+            IDCliBox.Size = new Size(193, 31);
             IDCliBox.TabIndex = 29;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(459, 368);
+            label5.Location = new Point(656, 613);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(0, 15);
+            label5.Size = new Size(0, 25);
             label5.TabIndex = 28;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(343, 401);
+            label4.Location = new Point(490, 668);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(0, 15);
+            label4.Size = new Size(0, 25);
             label4.TabIndex = 27;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(343, 342);
+            label3.Location = new Point(490, 570);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(44, 15);
+            label3.Size = new Size(65, 25);
             label3.TabIndex = 26;
             label3.Text = "Celular";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(18, 420);
+            label2.Location = new Point(26, 700);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(54, 15);
+            label2.Size = new Size(83, 25);
             label2.TabIndex = 25;
             label2.Text = "Nombre ";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 342);
+            label1.Location = new Point(26, 570);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(56, 15);
+            label1.Size = new Size(87, 25);
             label1.TabIndex = 24;
             label1.Text = "IDGenero";
             // 
@@ -120,13 +125,14 @@
             dgvCliente.AllowUserToAddRows = false;
             dgvCliente.AllowUserToDeleteRows = false;
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCliente.Location = new Point(10, 131);
-            dgvCliente.Margin = new Padding(3, 2, 3, 2);
+            dgvCliente.Location = new Point(14, 218);
+            dgvCliente.Margin = new Padding(4, 3, 4, 3);
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersWidth = 51;
-            dgvCliente.Size = new Size(679, 191);
+            dgvCliente.Size = new Size(970, 318);
             dgvCliente.TabIndex = 23;
+            dgvCliente.CellContentClick += dgvCliente_CellContentClick;
             // 
             // toolStrip1
             // 
@@ -134,7 +140,8 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { nuevoButton, eliminarButton, editarButton, guardarButton, cancelarButton, datosButton, salirButton });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 25);
+            toolStrip1.Padding = new Padding(0, 0, 3, 0);
+            toolStrip1.Size = new Size(1143, 34);
             toolStrip1.TabIndex = 22;
             toolStrip1.Text = "toolStripPeliculas";
             // 
@@ -144,7 +151,7 @@
             nuevoButton.Image = (Image)resources.GetObject("nuevoButton.Image");
             nuevoButton.ImageTransparentColor = Color.Magenta;
             nuevoButton.Name = "nuevoButton";
-            nuevoButton.Size = new Size(46, 22);
+            nuevoButton.Size = new Size(68, 29);
             nuevoButton.Text = "Nuevo";
             nuevoButton.Click += nuevoButton_Click;
             // 
@@ -154,7 +161,7 @@
             eliminarButton.Image = (Image)resources.GetObject("eliminarButton.Image");
             eliminarButton.ImageTransparentColor = Color.Magenta;
             eliminarButton.Name = "eliminarButton";
-            eliminarButton.Size = new Size(54, 22);
+            eliminarButton.Size = new Size(78, 29);
             eliminarButton.Text = "Eliminar";
             eliminarButton.Click += eliminarButton_Click;
             // 
@@ -164,7 +171,7 @@
             editarButton.Image = (Image)resources.GetObject("editarButton.Image");
             editarButton.ImageTransparentColor = Color.Magenta;
             editarButton.Name = "editarButton";
-            editarButton.Size = new Size(41, 22);
+            editarButton.Size = new Size(61, 29);
             editarButton.Text = "Editar";
             editarButton.Click += editarButton_Click;
             // 
@@ -174,7 +181,7 @@
             guardarButton.Image = (Image)resources.GetObject("guardarButton.Image");
             guardarButton.ImageTransparentColor = Color.Magenta;
             guardarButton.Name = "guardarButton";
-            guardarButton.Size = new Size(53, 22);
+            guardarButton.Size = new Size(79, 29);
             guardarButton.Text = "Guardar";
             guardarButton.Click += guardarButton_Click;
             // 
@@ -184,7 +191,7 @@
             cancelarButton.Image = (Image)resources.GetObject("cancelarButton.Image");
             cancelarButton.ImageTransparentColor = Color.Magenta;
             cancelarButton.Name = "cancelarButton";
-            cancelarButton.Size = new Size(57, 22);
+            cancelarButton.Size = new Size(82, 29);
             cancelarButton.Text = "Cancelar";
             cancelarButton.Click += cancelarButton_Click;
             // 
@@ -194,7 +201,7 @@
             datosButton.Image = (Image)resources.GetObject("datosButton.Image");
             datosButton.ImageTransparentColor = Color.Magenta;
             datosButton.Name = "datosButton";
-            datosButton.Size = new Size(87, 22);
+            datosButton.Size = new Size(133, 29);
             datosButton.Text = "Obtener Datos";
             datosButton.Click += datosButton_Click;
             // 
@@ -205,7 +212,7 @@
             salirButton.Image = (Image)resources.GetObject("salirButton.Image");
             salirButton.ImageTransparentColor = Color.Magenta;
             salirButton.Name = "salirButton";
-            salirButton.Size = new Size(33, 22);
+            salirButton.Size = new Size(49, 29);
             salirButton.Text = "Salir";
             salirButton.TextAlign = ContentAlignment.TopCenter;
             salirButton.Click += salirButton_Click;
@@ -213,51 +220,54 @@
             // IDCiuBox
             // 
             IDCiuBox.Enabled = false;
-            IDCiuBox.Location = new Point(116, 378);
-            IDCiuBox.Margin = new Padding(3, 2, 3, 2);
+            IDCiuBox.Location = new Point(166, 630);
+            IDCiuBox.Margin = new Padding(4, 3, 4, 3);
             IDCiuBox.Name = "IDCiuBox";
             IDCiuBox.ReadOnly = true;
-            IDCiuBox.Size = new Size(136, 23);
+            IDCiuBox.Size = new Size(193, 31);
             IDCiuBox.TabIndex = 33;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(18, 381);
+            label6.Location = new Point(26, 635);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(56, 15);
+            label6.Size = new Size(86, 25);
             label6.TabIndex = 32;
             label6.Text = "IDCiudad";
             // 
             // correoBox
             // 
-            correoBox.Location = new Point(421, 378);
-            correoBox.Margin = new Padding(3, 2, 3, 2);
+            correoBox.Location = new Point(601, 630);
+            correoBox.Margin = new Padding(4, 3, 4, 3);
             correoBox.Name = "correoBox";
-            correoBox.Size = new Size(136, 23);
+            correoBox.Size = new Size(193, 31);
             correoBox.TabIndex = 35;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(344, 381);
+            label7.Location = new Point(491, 635);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(43, 15);
+            label7.Size = new Size(66, 25);
             label7.TabIndex = 34;
             label7.Text = "Correo";
             // 
             // celularBox
             // 
-            celularBox.Location = new Point(421, 334);
+            celularBox.Location = new Point(601, 557);
+            celularBox.Margin = new Padding(4, 5, 4, 5);
             celularBox.Name = "celularBox";
-            celularBox.Size = new Size(136, 23);
+            celularBox.Size = new Size(193, 31);
             celularBox.TabIndex = 36;
             // 
             // Cliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 472);
+            ClientSize = new Size(1143, 787);
             Controls.Add(celularBox);
             Controls.Add(correoBox);
             Controls.Add(label7);
@@ -272,6 +282,7 @@
             Controls.Add(label1);
             Controls.Add(dgvCliente);
             Controls.Add(toolStrip1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Cliente";
             Text = "Cliente";
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
